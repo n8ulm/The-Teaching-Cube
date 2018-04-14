@@ -8,7 +8,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.teaching_cube.model.TeachingCubeUser;
 
-public interface TeachingCubeUserRepo extends CrudRepository<TeachingCubeUser, Integer> {
+public interface TeachingCubeUserRepo extends CrudRepository<TeachingCubeUser, String> {
 	
 	public Optional<TeachingCubeUser> findByUserName(String userName);
 	

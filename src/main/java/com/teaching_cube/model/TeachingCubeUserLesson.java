@@ -2,18 +2,21 @@ package com.teaching_cube.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 
 @Entity
+@IdClass(UserLessonKey.class)
 public class TeachingCubeUserLesson {
 	@Id
 	private String userName;
 	@Id
-	private int lessonID;
+	private Integer lessonID;
 	private int lessonScore;
-	
-	protected TeachingCubeUserLesson() {}
-	
-	public TeachingCubeUserLesson(String userName, int lessonID, int lessonScore) {
+
+	protected TeachingCubeUserLesson() {
+	}
+
+	public TeachingCubeUserLesson(String userName, Integer lessonID, int lessonScore) {
 		this.userName = userName;
 		this.lessonID = lessonID;
 		this.lessonScore = lessonScore;
@@ -27,11 +30,11 @@ public class TeachingCubeUserLesson {
 		this.userName = userName;
 	}
 
-	public int getLessonID() {
+	public Integer getLessonID() {
 		return lessonID;
 	}
 
-	public void setLessonID(int lessonID) {
+	public void setLessonID(Integer lessonID) {
 		this.lessonID = lessonID;
 	}
 
@@ -42,8 +45,5 @@ public class TeachingCubeUserLesson {
 	public void setLessonScore(int lessonScore) {
 		this.lessonScore = lessonScore;
 	}
-	
-	
-	
 
 }
