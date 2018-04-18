@@ -4,6 +4,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<script src="script.js"></script>
 	</head>
 	<body>
 		<nav class="navbar navbar-dark bg-dark">
@@ -37,7 +38,7 @@
 		<div class="container">
 			<div class ="row">
 				<div class ="col">
-					Current Lesson
+					<b>Current Lesson</b>
 					<div class="dropdown">
 						<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							Select Lesson
@@ -52,27 +53,43 @@
 						<a class="dropdown-item" href="#">4.1 Composite Functions</a>
 						</div>
 					</div>
+					This is where the lesson objective will go.
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-6">
 					<p>
-					Workspace
+					<b>Workspace</b>
 					</p>
 					 <div class="form-group">
-						<label for="exampleFormControlTextarea1">Code</label>
-							<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+						<label for="codeWindow">Code</label>
+							<textarea class="form-control" id="codeWindow" rows="3"></textarea>
 					</div>
 					<button type="submit" class="btn btn-primary">Run</button>
 				</div>
 				<div class="col-3">
 					<p>
-					Colors
+					<b>Colors</b>
 					</p>
+					<div class="btn-group-vertical" role="group" aria-label="Colors">
+						<button type="button" class="btn btn-primary"  caps="BLUE" onclick="$('#codeWindow').val($('#codeWindow').val()+$(this).attr('caps'))">Blue</button>
+						<button type="button" class="btn btn-warning" caps="YELLOW" onclick="$('#codeWindow').val($('#codeWindow').val()+$(this).attr('caps'))">Yellow</button>
+						<button type="button" class="btn btn-danger" caps="RED" onclick="$('#codeWindow').val($('#codeWindow').val()+$(this).attr('caps'))">Red</button>
+						<button type="button" class="btn btn-success" caps="GREEN" onclick="$('#codeWindow').val($('#codeWindow').val()+$(this).attr('caps'))">Green</button>
+					</div>
 				</div>
 				<div class="col-3">
 					<p>
-					Tools
+					<b>Tools</b>
+					<div class="btn-group-vertical" role="group" aria-label="Colors">
+						<button type="button" class="btn btn-outline-secondary" onclick="$('#codeWindow').val($('#codeWindow').val()+$(this).text())">+</button>
+						<button type="button" class="btn btn-outline-secondary" onclick="$('#codeWindow').val($('#codeWindow').val()+$(this).text())">-</button>
+						<button type="button" class="btn btn-outline-secondary" onclick="$('#codeWindow').val($('#codeWindow').val()+$(this).text())">while</button>
+						<button type="button" class="btn btn-outline-secondary" onclick="$('#codeWindow').val($('#codeWindow').val()+$(this).text())">do</button>
+						<button type="button" class="btn btn-outline-secondary" onclick="$('#codeWindow').val($('#codeWindow').val()+$(this).text())">if</button>
+						<button type="button" class="btn btn-outline-secondary" onclick="$('#codeWindow').val($('#codeWindow').val()+$(this).text())">else</button>
+						<button type="button" class="btn btn-outline-secondary" onclick="$('#codeWindow').val($('#codeWindow').val()+$(this).text())">then</button>
+					</div>
 					</p>
 				</div>
 			</div>
