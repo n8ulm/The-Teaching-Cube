@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -46,6 +47,7 @@ public class TeachingCubeController {
 
 	// Get Lesson from DB
 	@RequestMapping(path = "/lesson", method = RequestMethod.GET)
+	@CrossOrigin
 	public ResponseEntity<TeachingCubeLesson> getLesson(@RequestParam Integer lessonID) {
 
 		ResponseEntity<TeachingCubeLesson> response = new ResponseEntity<TeachingCubeLesson>(

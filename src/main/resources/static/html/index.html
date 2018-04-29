@@ -1,12 +1,14 @@
-<html>
+<html ng-app="teaching-cube">
 	<head>
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-		<script src="script.js"></script>
+		<link rel="stylesheet" href="format.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+		<script src="../js/script.js"></script>
 	</head>
-	<body>
+	<body ng-controller="TeachingCubeController">
 		<nav class="navbar navbar-dark bg-dark">
 			<a class="navbar-brand" href="#">The Teaching Cube</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,6 +38,7 @@
 			</div>
 		</nav>
 		<div class="container">
+		
 			<div class ="row">
 				<div class ="col">
 					<b>Current Lesson</b>
@@ -44,19 +47,19 @@
 							Select Lesson
 						</button>
 						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-						<a class="dropdown-item" href="#">1.1 Adding Colors</a>
-						<a class="dropdown-item" href="#">1.2 Subtracting Colors</a>
-						<a class="dropdown-item" href="#">2.1 Loops</a>
-						<a class="dropdown-item" href="#">2.2 Counters</a>
-						<a class="dropdown-item" href="#">3.1 Comparisons</a>
-						<a class="dropdown-item" href="#">3.2 Using Date & Time</a>
-						<a class="dropdown-item" href="#">4.1 Composite Functions</a>
+						<a class="dropdown-item" href="#" ng-click="getLesson('1')">1</a>
+						<a class="dropdown-item" href="#">2</a>
+						<a class="dropdown-item" href="#">3</a>
+						<a class="dropdown-item" href="#">4</a>
+						<a class="dropdown-item" href="#">5</a>
+						<a class="dropdown-item" href="#">6</a>
+						<a class="dropdown-item" href="#">7</a>
 						</div>
 					</div>
-					This is where the lesson objective will go.
+					{{lesson.lessonQuestion}}
 				</div>
 			</div>
-			<div class="row">
+			<div class="row top-buffer">
 				<div class="col-6">
 					<p>
 					<b>Workspace</b>
@@ -65,7 +68,13 @@
 						<label for="codeWindow">Code</label>
 							<textarea class="form-control" id="codeWindow" rows="3"></textarea>
 					</div>
-					<button type="submit" class="btn btn-primary">Run</button>
+					<button type="submit" class="btn btn-primary btn-lg" ng-model="checked" ng-click="checkAnswer($('#codeWindow').val())">
+					Check Answer
+					<span class = "glyphicon glyphicon-ok" ng-show="answerCorrect"></span>
+					</button>
+					<!-- This is where -->
+					<button type="button" ng-model="button" ng-disabled="checked" class="btn btn-secondary btn-lg disabled" >Submit</button>
+					<!-- I think we'll need JavaScript to make this button enabled after the answer is OK-->
 				</div>
 				<div class="col-3">
 					<p>

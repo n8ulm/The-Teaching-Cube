@@ -13,13 +13,15 @@ public class TeachingCubeLesson {
 	@Id 
 	private int lessonID;
 	private String lessonTitle;
-	private String lessonDetails;
+	private String lessonQuestion;
+	private String lessonAnswer;
 	
 	protected TeachingCubeLesson() {}
 	
-	public TeachingCubeLesson(String lessonDetails, String lessonTitle){
+	public TeachingCubeLesson(String lessonQuestion, String lessonTitle){
 		this.lessonTitle = lessonTitle;
-		this.lessonDetails = lessonDetails;
+		this.lessonQuestion = lessonQuestion;
+		this.lessonAnswer = lessonAnswer;
 
 	}
 	
@@ -35,14 +37,19 @@ public class TeachingCubeLesson {
 	public void setLessonTitle(String lessonTitle) {
 		this.lessonTitle = lessonTitle;
 	}
-	public String getLessonDetails() {
-		return lessonDetails;
+	public String getLessonQuestion() {
+		return lessonQuestion;
 	}
-	public void setLessonDetails(String lessonDetails) {
-		this.lessonDetails = lessonDetails;
+	public void setLessonQuestion(String lessonQuestion) {
+		this.lessonQuestion = lessonQuestion;
 	}
 
-	
+	public String getLessonAnswer() {
+		return lessonAnswer;
+	}
+	public void setLessonAnswer(String lessonAnswer) {
+		this.lessonAnswer = lessonAnswer;
+	}
 	
 	
 }
