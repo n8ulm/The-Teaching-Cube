@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
-
+// Lesson pojo
 @Entity
 public class TeachingCubeLesson {
 
