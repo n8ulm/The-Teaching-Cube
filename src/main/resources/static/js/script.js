@@ -10,6 +10,7 @@ angular.module('teaching-cube', [])
 	}
 	
 	$scope.checkAnswer = function(answer) {
+		alert($scope.lesson.lessonAnswer);
 		$scope.answerCorrect = (answer == $scope.lesson.lessonAnswer);
 	}
 	
