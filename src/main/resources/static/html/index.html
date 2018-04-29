@@ -66,24 +66,25 @@
 					</p>
 					 <div class="form-group">
 						<label for="codeWindow">Code</label>
-							<textarea class="form-control" id="codeWindow" rows="3"></textarea>
+							<input type="text" class="form-control" id="codeWindow" ng-model="userAnswer"/>
 					</div>
-					<button type="submit" class="btn btn-primary btn-lg" ng-model="checked" ng-click="checkAnswer($('#codeWindow').val())">
+					<button type="submit" class="btn btn-primary btn-lg" ng-click="checkAnswer()">
 					Check Answer
-					<span class = "glyphicon glyphicon-ok" ng-show="answerCorrect"></span>
 					</button>
 					<!-- This is where -->
-					<button type="button" ng-model="button" ng-disabled="checked" class="btn btn-secondary btn-lg disabled" >Submit</button>
+					<button type="button" ng-model="button" ng-disabled="!answerCorrect" class="btn btn-secondary btn-lg" >Submit</button>
 					<!-- I think we'll need JavaScript to make this button enabled after the answer is OK-->
+					
+				
 				</div>
 				<div class="col-3">
 					<p>
 					<b>Colors</b>
 					</p>
 					<div class="btn-group-vertical" role="group" aria-label="Colors">
-						<button type="button" class="btn btn-primary"  caps="BLUE" onclick="$('#codeWindow').val($('#codeWindow').val()+$(this).attr('caps'))">Blue</button>
+						<button type="button" class="btn btn-primary"  caps="BLUE" ng-click="userAnswer = userAnswer + 'BLUE'">Blue</button>
 						<button type="button" class="btn btn-warning" caps="YELLOW" onclick="$('#codeWindow').val($('#codeWindow').val()+$(this).attr('caps'))">Yellow</button>
-						<button type="button" class="btn btn-danger" caps="RED" onclick="$('#codeWindow').val($('#codeWindow').val()+$(this).attr('caps'))">Red</button>
+						<button type="button" class="btn btn-danger" caps="RED" ng-click="userAnswer = userAnswer + 'RED'">Red</button>
 						<button type="button" class="btn btn-success" caps="GREEN" onclick="$('#codeWindow').val($('#codeWindow').val()+$(this).attr('caps'))">Green</button>
 					</div>
 				</div>
@@ -91,7 +92,7 @@
 					<p>
 					<b>Tools</b>
 					<div class="btn-group-vertical" role="group" aria-label="Colors">
-						<button type="button" class="btn btn-outline-secondary" onclick="$('#codeWindow').val($('#codeWindow').val()+$(this).text())">+</button>
+						<button type="button" class="btn btn-outline-secondary" ng-click="userAnswer = userAnswer + '+'">+</button>
 						<button type="button" class="btn btn-outline-secondary" onclick="$('#codeWindow').val($('#codeWindow').val()+$(this).text())">-</button>
 						<button type="button" class="btn btn-outline-secondary" onclick="$('#codeWindow').val($('#codeWindow').val()+$(this).text())">while</button>
 						<button type="button" class="btn btn-outline-secondary" onclick="$('#codeWindow').val($('#codeWindow').val()+$(this).text())">do</button>

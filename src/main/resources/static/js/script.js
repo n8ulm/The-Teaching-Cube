@@ -3,15 +3,15 @@ angular.module('teaching-cube', [])
     $scope.answerCorrect = false;
 	$scope.getLesson=function(lessonID){
 		$scope.lessonID = lessonID;
-		$http.get('http://localhost:8080/teaching-cube/lesson?lessonID='+$scope.lessonID).
+		$http.get('https://teaching-cube.herokuapp.com/teaching-cube/lesson?lessonID='+$scope.lessonID).
 			then(function(response) {
 				$scope.lesson = response.data;
 			});
 	}
 	
-	$scope.checkAnswer = function(answer) {
-		alert($scope.lesson.lessonAnswer);
-		$scope.answerCorrect = (answer == $scope.lesson.lessonAnswer);
+	$scope.checkAnswer = function() {
+		$scope.answerCorrect = ($scope.userAnswer === $scope.lesson.lessonAnswer);
+		
 	}
 	
 });
