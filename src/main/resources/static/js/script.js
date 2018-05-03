@@ -14,4 +14,10 @@ angular.module('teaching-cube', [])
 		
 	}
 	
+	$scope.submitLesson=function(){
+		$http.get('192.168.2.4:8080/' +$scope.lessonID).
+			then(function(response) {
+				//TODO-
+			});
+	}	
 });
