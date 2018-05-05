@@ -14,7 +14,7 @@ public class TeachingCubeUser {
 	private String eMail;
 	private String userPassword;
 	
-	protected TeachingCubeUser() {}
+	public TeachingCubeUser() {}
 
     public TeachingCubeUser(String userName, LocalDate dateOfBirth, String eMail, String userPassword) {
         this.userName = userName;

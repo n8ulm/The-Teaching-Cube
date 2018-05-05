@@ -36,12 +36,17 @@ public class TeachingCubeController {
 	// Get User from DB
 	// This maps request in URL after /user
 	@RequestMapping(path = "/user", method = RequestMethod.GET)
-	public ResponseEntity<TeachingCubeUser> getUser(@RequestParam String userName) {
+	@CrossOrigin
+	public ResponseEntity<TeachingCubeUser> getUser(@RequestParam String userName, @RequestParam String userPassword) {
 
-		ResponseEntity<TeachingCubeUser> response = new ResponseEntity<TeachingCubeUser>(
-				teachingCubeUserRepo.findByUserName(userName).get(), HttpStatus.OK);
+		TeachingCubeUser user = teachingCubeUserRepo.findByUserName(userName).get();
 
-		return response;
+		// Simple insecure login - demo ready, but this should be updated in the future
+		if (user.getUserPassword().equals(userPassword)) {
+			return new ResponseEntity<TeachingCubeUser>(user, HttpStatus.OK);
+		} else {
+			return new ResponseEntity<TeachingCubeUser>(new TeachingCubeUser(), HttpStatus.FORBIDDEN);
+		}
 
 	}
 

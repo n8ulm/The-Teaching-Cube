@@ -48,12 +48,11 @@
 						</button>
 						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 						<a class="dropdown-item" href="#" ng-click="getLesson('1')">1</a>
-						<a class="dropdown-item" href="#">2</a>
-						<a class="dropdown-item" href="#">3</a>
-						<a class="dropdown-item" href="#">4</a>
-						<a class="dropdown-item" href="#">5</a>
-						<a class="dropdown-item" href="#">6</a>
-						<a class="dropdown-item" href="#">7</a>
+						<a class="dropdown-item" href="#" ng-click="getLesson('2')">2</a>
+						<a class="dropdown-item" href="#" ng-click="getLesson('3')">3</a>
+						<a class="dropdown-item" href="#" ng-click="getLesson('4')">4</a>
+						<a class="dropdown-item" href="#" ng-click="getLesson('5')">5</a>
+						<a class="dropdown-item" href="#" ng-click="getLesson('6')">6</a>
 						</div>
 					</div>
 					{{lesson.lessonQuestion}}
@@ -83,9 +82,11 @@
 					</p>
 					<div class="btn-group-vertical" role="group" aria-label="Colors">
 						<button type="button" class="btn btn-primary"  caps="BLUE" ng-click="userAnswer = userAnswer + 'BLUE'">Blue</button>
-						<button type="button" class="btn btn-warning" caps="YELLOW" onclick="$('#codeWindow').val($('#codeWindow').val()+$(this).attr('caps'))">Yellow</button>
+						<button type="button" class="btn btn-warning" caps="YELLOW" ng-click="userAnswer = userAnswer + 'YELLOW'">Yellow</button>
 						<button type="button" class="btn btn-danger" caps="RED" ng-click="userAnswer = userAnswer + 'RED'">Red</button>
-						<button type="button" class="btn btn-success" caps="GREEN" onclick="$('#codeWindow').val($('#codeWindow').val()+$(this).attr('caps'))">Green</button>
+						<button type="button" class="btn btn-success" caps="GREEN" ng-click="userAnswer = userAnswer + 'GREEN'">Green</button>
+						<button type="button" class="btn btn-secondary" caps="ORANGE" ng-click="userAnswer = userAnswer + 'ORANGE'">Orange</button>
+						<button type="button" class="btn btn-secondary" caps="PURPLE" ng-click="userAnswer = userAnswer + 'PURPLE'">Purple</button>
 					</div>
 				</div>
 				<div class="col-3">
@@ -93,12 +94,13 @@
 					<b>Tools</b>
 					<div class="btn-group-vertical" role="group" aria-label="Colors">
 						<button type="button" class="btn btn-outline-secondary" ng-click="userAnswer = userAnswer + '+'">+</button>
-						<button type="button" class="btn btn-outline-secondary" onclick="$('#codeWindow').val($('#codeWindow').val()+$(this).text())">-</button>
-						<button type="button" class="btn btn-outline-secondary" onclick="$('#codeWindow').val($('#codeWindow').val()+$(this).text())">while</button>
-						<button type="button" class="btn btn-outline-secondary" onclick="$('#codeWindow').val($('#codeWindow').val()+$(this).text())">do</button>
-						<button type="button" class="btn btn-outline-secondary" onclick="$('#codeWindow').val($('#codeWindow').val()+$(this).text())">if</button>
-						<button type="button" class="btn btn-outline-secondary" onclick="$('#codeWindow').val($('#codeWindow').val()+$(this).text())">else</button>
-						<button type="button" class="btn btn-outline-secondary" onclick="$('#codeWindow').val($('#codeWindow').val()+$(this).text())">then</button>
+						<button type="button" class="btn btn-outline-secondary" ng-click="userAnswer = userAnswer + '-'">-</button>
+						<button type="button" class="btn btn-outline-secondary" ng-click="userAnswer = userAnswer + ','">,</button>
+						<button type="button" class="btn btn-outline-secondary" ng-click="userAnswer = userAnswer + 'while'">while</button>
+						<button type="button" class="btn btn-outline-secondary" ng-click="userAnswer = userAnswer + 'do'">do</button>
+						<button type="button" class="btn btn-outline-secondary" ng-click="userAnswer = userAnswer + 'if'">if</button>
+						<button type="button" class="btn btn-outline-secondary" ng-click="userAnswer = userAnswer + 'else'">else</button>
+						<button type="button" class="btn btn-outline-secondary" ng-click="userAnswer = userAnswer + 'then'">then</button>
 					</div>
 					</p>
 				</div>
