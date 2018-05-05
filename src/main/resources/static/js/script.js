@@ -23,7 +23,7 @@ angular.module('teaching-cube', [])
 	
 	$scope.login = function() {
 		$http.get('https://teaching-cube.herokuapp.com/teaching-cube/user?userName='+$scope.username+'&userPassword='+$scope.password)
-			.then(function(response) {
+			.success(function(response) {
 				$scope.authFailed=false;
 				$window.location.href='/index.html';
 			})
