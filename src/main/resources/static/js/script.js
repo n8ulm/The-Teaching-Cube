@@ -1,5 +1,5 @@
 angular.module('teaching-cube', [])
-.controller('TeachingCubeController', function($scope, $http, $window) {
+.controller('TeachingCubeController', function($scope, $http, $window, $rootScope) {
     $scope.answerCorrect = false;
 	$scope.getLesson=function(lessonID){
 		$scope.lessonID = lessonID;
@@ -11,7 +11,6 @@ angular.module('teaching-cube', [])
 	
 	$scope.checkAnswer = function() {
 		$scope.answerCorrect = ($scope.userAnswer === $scope.lesson.lessonAnswer);
-		
 	}
 	
 	$scope.submitLesson=function(){
@@ -25,7 +24,8 @@ angular.module('teaching-cube', [])
 		$http.get('https://teaching-cube.herokuapp.com/teaching-cube/user?userName='+$scope.username+'&userPassword='+$scope.password)
 			.success(function(response) {
 				$scope.authFailed=false;
-				$window.location.href='/index.html';
+				$rootScope.username = $scope.username;
+				$window.location.href = './index.html';
 			})
 			.error(function(error,status) {
 				if (status==403){
